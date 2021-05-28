@@ -1,0 +1,75 @@
+.cadastro-container {
+    margin: 0px auto 0;
+    max-width: 450px;
+    width: 98%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.cadastro-container .content form h1 {
+    margin: 64px 0 3px;
+    font-size: 50px;
+    color:rgb(2, 2, 2);
+}
+
+.cadastro-container .content form p {
+    font-size: 25px;
+    line-height: 32px;
+}
+
+.cadastro-container .content form input {
+    margin-top: 8px;
+}
+
+.cadastro-container .content form .cadastroInputEmail {
+    background-color: transparent;
+    display:flex;
+    align-items: center;
+    border-radius: 5px;
+    padding: 3px;
+    width: 98%;
+    height: 50px;
+    opacity: 6;
+}
+
+.cadastro-container .content form .cadastroInputEmail input {
+    color: rgb(58, 33, 16);
+    background-color: transparent;
+    display:flex;
+    align-items: center;
+    border-radius: 5px;
+    padding: 3px;
+    width: 98%;
+    height: 50px;
+    opacity: 6;
+}
+
+.cadastro-container .content form .cadastroInputPassword {
+    display:flex;
+    align-items: center;
+    border-radius: 10px;
+    padding: 3px;
+    margin: 5px;
+    width: 98%;
+    height: 50px;
+}
+
+.cadastro-container .content form .cadastroInputPassword input {
+    background-color: transparent;
+    display:flex;
+    align-items: center;
+    border-radius: 5px;
+    padding: 3px;
+    width: 98%;
+    height: 50px;
+    opacity: 6;
+}
+
+
+
+
