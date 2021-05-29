@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "build": "node ace build --production",
-    "start": "node server.js",
+    "start": "node ace serve --watch",
+    "start:prod": "node ./build/server.js",
     "dev": "node ace serve --watch",
     "lint": "eslint . --ext=.ts",
     "format": "prettier --write ."
@@ -36,5 +37,8 @@
     "reflect-metadata": "^0.1.13",
     "source-map-support": "^0.5.19",
     "sqlite3": "^5.0.2"
-  }
+  },
+  "engines": {
+    "node": "14.15.4"
+}
 }
