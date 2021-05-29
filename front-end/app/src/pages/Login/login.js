@@ -17,15 +17,16 @@ function Login() {
         e.preventDefault()
         setShow(!show);
 
-    try {
-        const response = await api.post('login', { email, password });
-        localStorage.setItem('emailLogin', email);
-        localStorage.setItem('password.Login', response.data.email);
+        try {
+            const response = await api.post('login', { email, password });
+            localStorage.setItem('emailLogin', email);
+            localStorage.setItem('password.Login', response.data.email);
+    
+        history.push('/profile');
+        } catch (err) {
+            alert('Falha no login, tente novamente')
+            }
 
-    history.push('/profile');
-    } catch (err) {
-        alert('Falha no login, tente novamente')
-        }
     }
     return (
        <div className="login">
@@ -36,12 +37,22 @@ function Login() {
             <form>
                <div className="loginInputEmail">
                 <MdEmail />
-                <input type="text" placeholder="Digite um email" value={email} onChange={e => setEmail(e.target.value)} />
+                <input 
+                    type="text" 
+                    placeholder="Digite um email" 
+                    value={email} 
+                    onChange={e => setEmail(e.target.value)} 
+                />
                </div>
 
                <div className="loginInputPassword">
                    <MdLock />
-                   <input placeholder="Digite uma senha" type={show ? "text" : "password"} value={password} onChange={e => setPassword(e.target.value)} />
+                   <input 
+                    placeholder="Digite uma senha" 
+                    type={show ? "text" : "password"} 
+                    value={password} 
+                    onChange={e => setPassword(e.target.value)} 
+                    />
                     <div className="login-eye">
                         {show ? (
                             <HiEye size={20} onClick={handleClick} />
