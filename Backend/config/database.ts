@@ -6,7 +6,6 @@
  */
 
 import Env from '@ioc:Adonis/Core/Env'
-import Application from '@ioc:Adonis/Core/Application'
 import { DatabaseConfig } from '@ioc:Adonis/Lucid/Database'
 
 const databaseConfig: DatabaseConfig = {
@@ -23,30 +22,6 @@ const databaseConfig: DatabaseConfig = {
   connection: Env.get('DB_CONNECTION'),
 
   connections: {
-    /*
-    |--------------------------------------------------------------------------
-    | SQLite
-    |--------------------------------------------------------------------------
-    |
-    | Configuration for the SQLite database.  Make sure to install the driver
-    | from npm when using this connection
-    |
-    | npm i sqlite3
-    |
-    */
-    sqlite: {
-      client: 'sqlite',
-      connection: {
-        filename: Application.tmpPath('db.sqlite3'),
-      },
-      migrations: {
-        naturalSort: true,
-      },
-      useNullAsDefault: true,
-      healthCheck: false,
-      debug: false,
-    },
-
     /*
     |--------------------------------------------------------------------------
     | PostgreSQL config
@@ -66,10 +41,16 @@ const databaseConfig: DatabaseConfig = {
         user: Env.get('PG_USER'),
         password: Env.get('PG_PASSWORD', ''),
         database: Env.get('PG_DB_NAME'),
-      },
+
+        ssl: {
+          rejectUnauthorized: false
+        }
+      }, 
+
       migrations: {
         naturalSort: true,
       },
+
       healthCheck: false,
       debug: false,
     },
